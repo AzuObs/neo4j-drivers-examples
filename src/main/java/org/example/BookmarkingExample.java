@@ -9,11 +9,14 @@ import java.util.List;
 import static org.neo4j.driver.SessionConfig.builder;
 import static org.neo4j.driver.Values.parameters;
 
-public class Client implements AutoCloseable {
+/**
+ * This example shows how bookmarks work.
+ */
+public class BookmarkingExample implements AutoCloseable {
 
     private final Driver driver;
 
-    public Client(String uri, String user, String password) {
+    public BookmarkingExample(String uri, String user, String password) {
         driver = GraphDatabase.driver(uri, AuthTokens.basic(user, password));
     }
 
